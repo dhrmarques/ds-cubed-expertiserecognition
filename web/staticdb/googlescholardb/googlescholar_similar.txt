@@ -1,0 +1,179 @@
+Metrology and Measuring Systems	0.91	Metrology and Measurement Systems	14
+International Journal of Economics and Management	0.92	International Journal of Services, Economics and Management	6
+Journal of Education and Human Development	0.79	Journal of Agricultural Education and Human Resource Development	2
+Journal of laboratory automation	0.80	Journal of the Association for Laboratory Automation	18
+Comparative Biochemistry and Physiology, Part C	0.78	Comparative Biochemistry and Physiology Part C: Toxicology & Pharmacology	30
+Nordic Studies in Education	0.87	Nordic Studies in Science Education	7
+Materials Forum	0.79	Materials Science Forum	18
+Revue des Musees de France	0.76	La revue du Louvre et des musees de France	1
+International Journal of Biotechnology	0.78	International Journal of Biology and Biotechnology (Pakistan)	4
+Journal of Counseling and Development	0.84	Journal of Multicultural Counseling and Development	11
+Biochemical Society Symposium	0.75	Biochemical Society transactions	49
+Limnology and Oceanography Bulletin	0.84	Limnology and Oceanography-Methods	23
+Global Journal of Pure and Applied Mathematics	0.86	International Journal of Pure and Applied Mathematics	9
+Asian Journal of Earth Sciences	0.81	Journal of Asian Earth Sciences	39
+Comparative Biochemistry & Physiology C: Comparative Pharmacology & Toxicology	0.77	Comparative Biochemistry and Physiology Part C: Toxicology & Pharmacology	30
+Journal of Cell and Molecular Biology	0.78	American Journal of Respiratory Cell and Molecular Biology	47
+Mind and Language	0.86	Brain and Language	40
+Rasprave Instituta za Hrvatski Jezik i Jezikoslovlje	0.93	Rasprave: Casopis Instituta za hrvatski jezik i jezikoslovlje	4
+International Business Management	0.78	International Conference on Business Management & IS	2
+Electronic Journal of Structural Engineering	0.84	Australian Journal of Structural Engineering	6
+Geological Society Memoir	0.86	Geological Society, London, Memoirs	14
+Journal of Brain Science	0.76	Journal of Behavioral and Brain Science	5
+Composites Technology	0.78	Composites Science and Technology	59
+Nineteenth-Century Studies	0.88	Nineteenth-Century French Studies	2
+International Journal of Structural Engineering	0.92	International Journal of Civil & Structural Engineering	7
+International Journal of Economic Research	0.86	International Journal of Economics and Business Research	6
+International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences - ISPRS Archives	0.89	ISPRS-International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences	11
+Studies in Regional Science	0.83	Papers in Regional Science	27
+Applied Psychophysiology Biofeedback	0.95	Applied Psychophysiology and Biofeedback	22
+Textiles Eastern Europe	0.79	Fibres & Textiles in Eastern Europe	14
+Advances in Applied Mechanics	0.81	Advances in Applied Mathematics and Mechanics	15
+Frontiers in Synaptic Neuroscience	0.79	Frontiers in Computational Neuroscience	24
+Journal of Women''s Health	0.77	Journal of Midwifery & Womens Health	23
+International Journal of Automation Technology	0.90	International Journal of Automation and Smart Technology	3
+Asian Journal of Information Technology	0.80	Asian Journal of Computer Science & Information Technology	4
+Acta Pharmaceutica Sciencia	0.89	Acta Pharmaceutica Sinica B	10
+Madera Bosques	0.93	Madera y Bosques	4
+Electronic Journal of Health Informatics	0.80	Online Journal of Public Health Informatics	6
+Journal of the Korean Ceramic Society	0.87	Journal of the Korean Mathematical Society	12
+Asian Journal of Ophthalmology	0.87	The Asia-Pacific Journal of Ophthalmology	3
+Journal of Internet Commerce	0.85	Journal of Internet Banking & Commerce	14
+Physica Status Solidi - Rapid Research Letetrs	0.93	physica status solidi (RRL)-Rapid Research Letters	29
+Educational Research Review	0.92	Educational Research and Reviews	13
+Oral Surgery Oral Medicine Oral Pathology Oral Radiology And Endodontics	0.95	Oral Surgery, Oral Medicine, Oral Pathology, Oral Radiology, and Endodontology	43
+Asian Journal of Pharmaceutical Sciences	0.90	Asian Journal of Pharmaceutical & Health Sciences	3
+Journal of Equine Science	0.82	Journal of Equine Veterinary Science	13
+European Journal of Social Sciences	0.79	European Online Journal of Natural and Social Sciences	2
+Yearbook of Physical Anthropology	0.76	American Journal of Physical Anthropology	38
+Journal of Medicine and Biomedical Research	0.76	Journal of International Dental and Medical Research	4
+RIAI - Revista Iberoamericana de Automatica e Informatica Industrial	0.92	Revista Iberoamericana de Automatica e Informatica Industrial RIAI	8
+Frontiers in Bioscience-Landmark	0.89	Frontiers in bioscience (Landmark edition)	53
+Revue d''Histoire du XIXe Siecle	0.80	Revue dhistoire du XIX< sup> e</sup> siecle	3
+ATLA Alternatives to Laboratory Animals	0.87	Alternatives to laboratory animals: ATLA	15
+Frontiers in Earth Sciences	0.77	Frontiers of Earth Science in China	9
+Applied Mathematical Sciences	0.78	Applied Mathematics & Information Sciences	16
+Journal of Policy Practice	0.78	Journal of Management Policy and Practice	7
+Environmental Geosciences	0.76	Environmental & Engineering Geoscience	8
+Training and Education in Psychology	0.85	Training and Education in Professional Psychology	17
+Annals of Respiratory Medicine	0.77	Annals of Thoracic Medicine	19
+Gas Wasserfach Wasser Abwasser	0.88	Das Gas-und Wasserfach. Wasser, Abwasser	4
+Journal Of Environmental Pathology And Toxicology	0.86	Journal of environmental pathology, toxicology and oncology	13
+Computers and Industrial Engineering	0.75	Computer Applications in Industry and Engineering	4
+Salud Cienc	0.85	Salud I Ciencia	1
+International Journal of Stress Management	0.85	International Journal of Bio-Resource & Stress Management	3
+Language and Communication	0.79	Language and Intercultural Communication	11
+Irish Journal of Psychology	0.79	Irish Journal of Psychological Medicine	5
+Bio-Medical Engineering	0.77	Bio-Medical Materials and Engineering	15
+International Community Law Review	0.84	International Criminal Law Review	9
+Research Journal of Obstetrics and Gynecology	0.79	Journal of Obstetrics and Gynaecology Research	23
+Journal of the Turkish German Gynecology Association	0.95	Journal of the Turkish German Gynecological Association	4
+Proteins-Structure Function And Genetics	0.86	Proteins: Structure, Function, and Bioinformatics	48
+Philippine Journal of Science	0.77	Philippine Journal of Crop Science (Philippines)	3
+Current Allergy and Clinical Immunology	0.88	Current Opinion in Allergy and Clinical Immunology	38
+Journal of Information Technology Research	0.89	Journal of Information Technology Education: Research	17
+Journal of Psychology	0.82	Journal of Economic Psychology	34
+Vierteljahresschrift fur Sozial und Wirtschaftsgeschichte	0.94	VSWG. Vierteljahrschrift fur Sozial-und Wirtschaftsgeschichte	2
+Pharmaceutical Reviews	0.81	American Pharmaceutical Review	9
+Annals of Ophthalmology	0.79	Archives of Ophthalmology	53
+Journal of Macromolecular Science - Physics	0.86	Journal of Macromolecular Science, Part B	12
+Transactions of the Institution of Mining and Metallurgy, Section A: Mining Technology	0.78	Mining Technology(Transactions of the Institution of Mining and Metallurgy, Section A)	8
+Journal of Analysis and Applications	0.82	Journal of Electromagnetic Analysis and Applications	8
+International Agricultural Engineering Journal	0.80	International Journal of Agricultural Engineering	1
+Drugs R&D	0.86	Drugs in R&D	13
+Journal of Wealth Management	0.87	Journal of Asset Management	10
+Geological Society Special Publication	0.90	Geological Society, London, Special Publications	36
+American Journal of Immunology	0.82	American Journal of Reproductive Immunology	35
+Journal of Pain Management	0.81	Journal of Pain and Symptom Management	46
+Psychologie et NeuroPsychiatrie du Vieillissement	0.85	Geriatrie et Psychologie Neuropsychiatrie du Vieillissement	3
+Banking and Finance Review	0.93	Banking and Finance Law Review	4
+Gynecologic Oncology Reports	0.92	Gynecologic Oncology Case Reports	3
+Advances in Multimedia	0.79	Advances in Mobile Multimedia (MoMM)	9
+International Journal of Simulation Modelling	0.76	International Journal of Modelling & Simulation	5
+Journal Of Optical Networking	0.75	Journal of Optical Communications and Networking	30
+Diabetes Primary Care	0.91	Diabetes and Primary Care	3
+International Journal of Oral and Maxillofacial Implants	0.88	International Journal of Oral and Maxillofacial Surgery	35
+JDDG - Journal of the German Society of Dermatology	0.89	Journal of the German Society of Dermatology: JDDG	28
+Discrete Mathematics and Applications	0.86	Discrete Mathematics, Algorithms and Applications	11
+Journal of Computational Information Systems	0.89	Journal of Computer Information Systems	24
+Journal for Technology of Plasticity	0.81	Journal of the Japan Society for Technology of Plasticity	5
+Rivista di Filologia Classica	0.78	Rivista di Filologia e di Istruzione Classica	2
+Journal of Sports Science and Medicine	0.79	Journal of Science and Medicine in Sport	46
+International Finance Review	0.87	International Financial Law Review	2
+Indian Journal of Marine Sciences	0.94	Indian Journal of Geo-Marine Sciences	12
+Journal d''Economie Medicale	0.77	Journal de gestion et d'economie medicales	5
+Revista de la Facultad de Ciencias Medicas de Cordoba	0.88	Revista de la Facultad de Ciencias Medicas (Cordoba, Argentina)	3
+Journal of Architecture and Planning	0.85	Journal of Architectural and Planning Research	6
+Frontiers in Mathematics	0.75	Frontiers of Mathematics in China	14
+Bulletin - Societie Geologique de France	0.91	Bulletin de la Societe Geologique de France	13
+Proceedings of the Aristotelean Society	0.86	Proceedings of the Aristotelian Society (Hardback)	9
+Polski Przeglad Kardiologiczny	0.88	Polski Przeglad Neurologiczny	2
+Current Orthopaedics	0.79	Current Orthopaedic Practice	8
+Trauma (Spain)	0.85	Trauma (Spanish)	4
+Chirurgia (Romania)	0.77	Chirurgia (Bucharest, Romania)	10
+Journal of Medical Engineering and Technology	0.84	International Journal of Biomedical Engineering and Technology	10
+International Review of Economics and Finance	0.80	International Journal of Monetary Economics and Finance	6
+Journal of Entomological Research	0.80	Journal of Entomological and Acarological Research	5
+Journal of Gambling Issues	0.91	Journal of gambling studies	26
+Proceedings of the Institution of Mechanical Engineers Part M-Journal of En	0.81	Proceedings of the Institution of Mechanical Engineers, Part M: Journal of Engineering for the Maritime Environment	11
+Journal of Biophysics	0.79	Journal of Biophysical Chemistry	7
+Hiroshima Mathematical Journal	0.79	Ukrainian Mathematical Journal	10
+Journal of Otolaryngology - Head and Neck Surgery	0.90	Philippine Journal of Otolaryngology Head and Neck Surgery	2
+Acta Agronomica Sinica	0.82	Acta Automatica Sinica	22
+City and Society	0.80	City, Culture and Society	11
+International Geophysics	0.81	International Journal of Geophysics	8
+Annali della Scuola Normale - Classe di Scienze	0.83	Annali della Scuola Normale Superiore di Pisa. Classe di scienze	16
+Bulletin of Pharmaceutical Sciences	0.76	Indian Journal of Pharmaceutical Sciences	25
+Chinese Journal of Clinical Oncology	0.91	The Chinese-German Journal of Clinical Oncology	1
+Journal of Humanities and Social Sciences	0.80	Journal of Zhejiang University (Humanities and Social Sciences)	15
+Recent Patents on Electrical Engineering	0.86	Recent Patents on Electrical & Electronic Engineering	6
+European Journal of Scientific Research	0.75	Innovation: The European Journal of Social Science Research	10
+Symmetry, Integrability and Geometry: Methods and Applications (SIGMA)	0.91	SIGMA. Symmetry, Integrability and Geometry: Methods and Applications	20
+Advanced Composites Letters	0.78	Advanced Science Letters	19
+International Journal of Engineering and Technology	0.86	International Journal of Science, Engineering and Technology Research	3
+Malaysian Journal of Science	0.80	The Malaysian Journal of Medical Sciences: MJMS	9
+Journal of Environment and Development	0.87	Journal of Environmental Research and Development	5
+Journal of Mathematical Neuroscience	0.85	Journal of Computational Neuroscience	29
+Journal of Traditional and Complementary Medicine	0.76	African journal of traditional, complementary, and alternative medicines	18
+International Journal of Finance and Economics	0.75	International Journal of Monetary Economics and Finance	6
+Journal Of The American Pharmaceutical Association	0.84	Journal of the American Pharmacists Association: JAPhA	20
+Analytical and Bioanalytical Electrochemistry	0.92	Analytical and Bioanalytical Chemistry	72
+ADB Economics Working Paper Series	0.78	Asian Development Bank Economics Working Paper Series	17
+Journal of Cardiovascular Echography	0.78	Journal of Cardiovascular Ultrasound	10
+Clinical & Developmental Immunology	0.87	Clinical & Experimental Immunology	49
+International Journal of Ayurveda Research	0.76	International Journal of Research in Ayurveda & Pharmacy	5
+Journal of the American Osteopathic Association, The	0.95	JAOA: Journal of the American Osteopathic Association	19
+Molecular Metabolism	0.75	Molecular Genetics and Metabolism	39
+Lin chuang er bi yan hou ke za zhi = Journal of clinical otorhinolaryngology	0.81	Lin chuang er bi yan hou tou jing wai ke za zhi= Journal of clinical otorhinolaryngology, head, and neck surgery	6
+Indian J Cancer	0.77	Indian Journal of Cancer	19
+Child and Youth Services	0.83	Children and Youth Services Review	36
+International Journal of Intelligent Engineering and Systems	0.82	International Journal of Knowledge-Based and Intelligent Engineering Systems	7
+Journal of Global Information Management	0.88	Journal of Global Information Technology Management	9
+Proteins: Structure, Function and Genetics	0.86	Proteins: Structure, Function, and Bioinformatics	48
+International Journal of Research in Pharmaceutical Sciences	0.90	International Journal of Research in Pharmacy & Science	5
+Revista Brasileira De Zoologia	0.92	Revista Brasileira de Entomologia	15
+Asian Journal of Clinical Nutrition	0.88	Asia Pacific Journal of Clinical Nutrition	23
+Open Microbiology Journal	0.87	The Open Virology Journal	13
+Siberian Mathematical Journal	0.84	Ukrainian Mathematical Journal	10
+A Journal of emergency medical services : JEMS	0.89	JEMS: a journal of emergency medical services	5
+International Review of Sport and Exercise Psychology	0.90	International Journal of Sport and Exercise Psychology	14
+European Endocrinology	0.80	European Journal of Endocrinology	54
+Rasayan Journal of Chemistry	0.76	Asian Journal of Research in Chemistry	4
+Chinese Journal of Ecology	0.90	Chinese Journal of Plant Ecology	8
+IJCAI International Joint Conference on Artificial Intelligence	0.90	International Joint Conference on Artificial Intelligence (IJCAI)	46
+Workshop on Hyperspectral Image and Signal Processing, Evolution in Remote Sensing	0.95	Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)	12
+Iranian Journal of Pathology	0.90	Iranian Journal of Plant Pathology	3
+Agricultural Economics Review	0.87	Agricultural Economics Research Review	10
+Ulusal Travma ve Acil Cerrahi Dergisi-Turkish Journal of Trauma & Emergency	0.91	Ulusal travma ve acil cerrahi dergisi= Turkish journal of trauma & emergency surgery: TJTES	15
+International Journal of Early Childhood	0.79	International Journal of Early Years Education	12
+Corrosion and Materials	0.78	Anti-Corrosion Methods and Materials	8
+Molecular Ecology Notes	0.84	Molecular Ecology Resources	55
+Operating Systems Review (ACM)	0.76	ACM SIGOPS Operating Systems Review	33
+ACM Transactions on Computer Systems	0.89	ACM Transactions on Embedded Computer Systems	8
+Indian Journal of Mathematics	0.76	Indian Journal of Pure and Applied Mathematics	8
+Computer-Assisted Radiology and Surgery	0.76	International Journal of Computer Assisted Radiology and Surgery	23
+Turkiye Klinikleri Pediatri	0.81	Turkiye Klinikleri Journal of Pediatrics	3
+SA Journal of Industrial Psychology	0.86	South African Journal of Industrial Psychology	17
+New West Indian Guide/Nieuwe West-Indische Gids (NWIG)	0.90	Nwig-New West Indian Guide-Nieuwe West-Indische Gids	4
+Journal of African Law	0.88	Journal of South African Law	3
+International Journal of Wine Research	0.89	International Journal of Wine Business Research	18
