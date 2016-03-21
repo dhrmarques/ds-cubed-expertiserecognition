@@ -142,7 +142,8 @@ public class ScopusServlet extends HttpServlet
                 response.getWriter().println("\n<br>\n<br></body></html>");
             }
             else {
-                response.getWriter().print(displayResults(res));
+                response.getWriter().print(displayResults(res, request.getParameter("search"), 
+                        request.getParameter("years"), request.getParameter("content")));
                 response.getWriter().println("</body></html>");
             }
         } catch (Exception ex) {
@@ -229,7 +230,7 @@ public class ScopusServlet extends HttpServlet
     
     // TODO: Can be changed to allow only each table to be loaded once.
     // Need to verify this with the other team members.
-    private String displayResults(ScopusResults res) throws Exception {
+    private String displayResults(ScopusResults res, String search, String years, String content) throws Exception {
         StringBuilder sb = new StringBuilder();
         sb.append("<script src=\"/static/jquery.tablesorter.min.js\"></script>\n");
         sb.append("<script src=\"/static/mytablesort.js\"></script>\n");
@@ -243,50 +244,122 @@ public class ScopusServlet extends HttpServlet
         sb.append(res.totalResults);
         sb.append("\n<br>The results were obtained at ");
         sb.append(res.timestampResults);
-        sb.append("</p><p><a href=\"#authortable\">Authors Table</a><br>\n");
-        sb.append("<a href=\"#affiltable\">Affliations Table</a><br>\n");
-        sb.append("<a href=\"#loctable\">Locations Table</a><br>\n");
-        sb.append("<a href=\"#countrytable\">Countries Table</a><br>\n");
-        sb.append("<a href=\"#citationtable\">Citations Table</a><br>\n");
-        sb.append("<a href=\"#map\">Map of locations</a></p>\n");
+        
+//        sb.append("</p><p><a href=\"#authortable\">Authors Table</a><br>\n");
+//        sb.append("<a href=\"#affiltable\">Affliations Table</a><br>\n");
+//        sb.append("<a href=\"#loctable\">Locations Table</a><br>\n");
+//        sb.append("<a href=\"#countrytable\">Countries Table</a><br>\n");
+//        sb.append("<a href=\"#citationtable\">Citations Table</a><br>\n");
+//        sb.append("<a href=\"#map\">Map of locations</a></p>\n");
+
+        // Links to show tables, with the content to be shown
+        sb.append("</p><p><a href=\"?search="); 
+        sb.append(search);
+        sb.append("&years=");
+        sb.append(years);
+        sb.append("&content=");
+        sb.append("authortable\">Authors Table</a><br>\n");
+        
+        sb.append("</p><p><a href=\"?search="); 
+        sb.append(search);
+        sb.append("&years=");
+        sb.append(years);
+        sb.append("&content=");
+        sb.append("affiltable\">Affiliations Table</a><br>\n");
+        
+        sb.append("</p><p><a href=\"?search="); 
+        sb.append(search);
+        sb.append("&years=");
+        sb.append(years);
+        sb.append("&content=");
+        sb.append("loctable\">Locations Table</a><br>\n");
+        
+        sb.append("</p><p><a href=\"?search="); 
+        sb.append(search);
+        sb.append("&years=");
+        sb.append(years);
+        sb.append("&content=");
+        sb.append("countrytable\">Countries Table</a><br>\n");
+        
+        sb.append("</p><p><a href=\"?search="); 
+        sb.append(search);
+        sb.append("&years=");
+        sb.append(years);
+        sb.append("&content=");
+        sb.append("citationtable\">Citations Table</a><br>\n");
+        
+        sb.append("</p><p><a href=\"?search="); 
+        sb.append(search);
+        sb.append("&years=");
+        sb.append(years);
+        sb.append("&content=");
+        sb.append("heatmap\">Map of locations</a><br>\n");
+        
         sb.append("\n<br>\n");
-        sb.append("<br><div id=\"authortable\"></div><table id=\"authortbl\" class=\"tablesorter\"><thead><tr><th>Author</th><th>Total SJR</th><th>Mean SJR</th><th>Total ImpF</th><th>Mean ImpF</th><th>Total h5index</th><th>Mean h5index</th><th>Total EigenF*1000</th><th>Mean EigenF*1000</th><th>Papers h-index</th><th>HRat</th><th>HSJR</th><th>HIF</th><th>HCit</th><th>HCit2</th><th>g-index</th><th>e-index</th><th>m-index</th><th>Total pubs</th></tr></thead><tbody>\n");
-        sb.append(addTable(res.authorList, 100));
-        sb.append("</tbody></table>\n<br>\n<br>\n");
-        sb.append("<p><a href=\"#\">Back to Top</a></p>\n");
-        sb.append("<br><div id=\"affiltable\"></div><table id=\"affltbl\" class=\"tablesorter\"><thead><tr><th>Affliation</th><th>Total SJR</th><th>Mean SJR</th><th>Total ImpF</th><th>Mean ImpF</th><th>Total h5index</th><th>Mean h5index</th><th>Total EigenF*1000</th><th>Mean EigenF*1000</th><th>Papers h-index</th><th>HRat</th><th>HSJR</th><th>HIF</th><th>HCit</th><th>HCit2</th><th>g-index</th><th>e-index</th><th>m-index</th><th>Total pubs</th></tr></thead><tbody>\n");
-        sb.append(addTable(res.affilList, 100));
-        sb.append("</tbody></table>\n<br>\n<br>\n");
-        sb.append("<p><a href=\"#\">Back to Top</a></p>\n");
-        sb.append("<br><div id=\"loctable\"></div><table id=\"loctbl\" class=\"tablesorter\"><thead><tr><th>Location</th><th>Total SJR</th><th>Mean SJR</th><th>Total ImpF</th><th>Mean ImpF</th><th>Total h5index</th><th>Mean h5index</th><th>Total EigenF*1000</th><th>Mean EigenF*1000</th><th>Papers h-index</th><th>HRat</th><th>HSJR</th><th>HIF</th><th>HCit</th><th>HCit2</th><th>g-index</th><th>e-index</th><th>m-index</th><th>Total pubs</th></tr></thead><tbody>\n");
-        sb.append(addTable(res.locationList, 100, Geocode.getInstance()));
-        sb.append("</tbody></table>\n<br>\n<br>\n");
-        sb.append("<p><a href=\"#\">Back to Top</a></p>\n");
-        sb.append("<br><div id=\"countrytable\"></div><table id=\"countrytbl\" class=\"tablesorter\"><thead><tr><th>Country</th><th>Total SJR</th><th>Mean SJR</th><th>Total ImpF</th><th>Mean ImpF</th><th>Total h5index</th><th>Mean h5index</th><th>Total EigenF*1000</th><th>Mean EigenF*1000</th><th>Papers h-index</th><th>HRat</th><th>HSJR</th><th>HIF</th><th>HCit</th><th>HCit2</th><th>g-index</th><th>e-index</th><th>m-index</th><th>Total pubs</th></tr></thead><tbody>\n");
-        sb.append(addTable(res.countryList, 100));
-        sb.append("</tbody></table>\n<br>\n<br>\n");
-        sb.append("<p><a href=\"#\">Back to Top</a></p>\n");
-        sb.append("<br><div id=\"citationtable\"></div><table id=\"citationtbl\" class=\"tablesorter\"><thead><tr><th>Citation</th><th>Affliations</th><th>SJR</th><th>ImpF</th><th>h5index</th><th>EigenF*1000</th><th>Cited-by</th></tr></thead><tbody>\n");
-        sb.append(addCitationTable(res.citationList, 100));
-        sb.append("</tbody></table>\n<br>\n<br>\n");
-        sb.append("<div id=\"map\" style=\"width: 80%; height: 80%; position: absolute;\"><div id=\"map-canvas\" style=\"width: 80%; height: 80%; position: absolute;\"></div></div>\n<br>\n<br>\n");
-        sb.append("<script>\n");
-        sb.append("window.onload = function() {\n");
-        sb.append("var map, pointarray, heatmap;\n\n");
-        sb.append("var locData = [\n");
-        sb.append(createHeatMap(res.locationList, 100));
-        sb.append("];\n\n");
-        sb.append("var mapOptions = {zoom: 13, center: new google.maps.LatLng(37.774546, -122.433523)};\n");
-        sb.append("map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);\n");
-        sb.append("var markerBounds = new google.maps.LatLngBounds();\n");
-        sb.append(addMarkerBounds(res.locationList, 100));
-        sb.append("map.fitBounds(markerBounds);\n");
-        sb.append("var pointArray = new google.maps.MVCArray(locData);\n");
-        sb.append("heatmap = new google.maps.visualization.HeatmapLayer({data: pointArray});\n");
-        sb.append("heatmap.setMap(map);\n");
-        sb.append("heatmap.set('radius', 20);\n");
-        sb.append("};\n</script>\n");
-        sb.append("<p><a href=\"#\">Back to Top</a></p>\n");
+        
+        if (content != null) { // The user has clicked in one of the "content" links
+            if (content.equals("authortable")) {
+                sb.append("<br><div id=\"authortable\"></div><table id=\"authortbl\" class=\"tablesorter\"><thead><tr><th>Author</th><th>Total SJR</th><th>Mean SJR</th><th>Total ImpF</th><th>Mean ImpF</th><th>Total h5index</th><th>Mean h5index</th><th>Total EigenF*1000</th><th>Mean EigenF*1000</th><th>Papers h-index</th><th>HRat</th><th>HSJR</th><th>HIF</th><th>HCit</th><th>HCit2</th><th>g-index</th><th>e-index</th><th>m-index</th><th>Total pubs</th></tr></thead><tbody>\n");
+                sb.append(addTable(res.authorList, 100));
+                sb.append("</tbody></table>\n<br>\n<br>\n");
+                sb.append("<p><a href=\"#\">Back to Top</a></p>\n");
+            }
+
+            if (content.equals("affiltable")) {
+                sb.append("<br><div id=\"affiltable\"></div><table id=\"affltbl\" class=\"tablesorter\"><thead><tr><th>Affliation</th><th>Total SJR</th><th>Mean SJR</th><th>Total ImpF</th><th>Mean ImpF</th><th>Total h5index</th><th>Mean h5index</th><th>Total EigenF*1000</th><th>Mean EigenF*1000</th><th>Papers h-index</th><th>HRat</th><th>HSJR</th><th>HIF</th><th>HCit</th><th>HCit2</th><th>g-index</th><th>e-index</th><th>m-index</th><th>Total pubs</th></tr></thead><tbody>\n");
+                sb.append(addTable(res.affilList, 100));
+                sb.append("</tbody></table>\n<br>\n<br>\n");
+                sb.append("<p><a href=\"#\">Back to Top</a></p>\n");            
+            }
+
+            if (content.equals("loctable")) {
+                sb.append("<br><div id=\"loctable\"></div><table id=\"loctbl\" class=\"tablesorter\"><thead><tr><th>Location</th><th>Total SJR</th><th>Mean SJR</th><th>Total ImpF</th><th>Mean ImpF</th><th>Total h5index</th><th>Mean h5index</th><th>Total EigenF*1000</th><th>Mean EigenF*1000</th><th>Papers h-index</th><th>HRat</th><th>HSJR</th><th>HIF</th><th>HCit</th><th>HCit2</th><th>g-index</th><th>e-index</th><th>m-index</th><th>Total pubs</th></tr></thead><tbody>\n");
+                sb.append(addTable(res.locationList, 100, Geocode.getInstance()));
+                sb.append("</tbody></table>\n<br>\n<br>\n");
+                sb.append("<p><a href=\"#\">Back to Top</a></p>\n");
+            }
+
+            if (content.equals("countrytable")) {
+                sb.append("<br><div id=\"countrytable\"></div><table id=\"countrytbl\" class=\"tablesorter\"><thead><tr><th>Country</th><th>Total SJR</th><th>Mean SJR</th><th>Total ImpF</th><th>Mean ImpF</th><th>Total h5index</th><th>Mean h5index</th><th>Total EigenF*1000</th><th>Mean EigenF*1000</th><th>Papers h-index</th><th>HRat</th><th>HSJR</th><th>HIF</th><th>HCit</th><th>HCit2</th><th>g-index</th><th>e-index</th><th>m-index</th><th>Total pubs</th></tr></thead><tbody>\n");
+                sb.append(addTable(res.countryList, 100));
+                sb.append("</tbody></table>\n<br>\n<br>\n");
+                sb.append("<p><a href=\"#\">Back to Top</a></p>\n");
+            }
+
+            if (content.equals("citationtable")) {
+                sb.append("<br><div id=\"citationtable\"></div><table id=\"citationtbl\" class=\"tablesorter\"><thead><tr><th>Citation</th><th>Affliations</th><th>SJR</th><th>ImpF</th><th>h5index</th><th>EigenF*1000</th><th>Cited-by</th></tr></thead><tbody>\n");
+                sb.append(addCitationTable(res.citationList, 100));
+                sb.append("</tbody></table>\n<br>\n<br>\n");
+            }
+
+            if (content.equals("heatmap")) {
+                sb.append("<div id=\"map\" style=\"width: 80%; height: 80%; position: absolute;\"><div id=\"map-canvas\" style=\"width: 80%; height: 80%; position: absolute;\"></div></div>\n<br>\n<br>\n");
+                sb.append("<script>\n");
+                sb.append("window.onload = function() {\n");
+                sb.append("var map, pointarray, heatmap;\n\n");
+                sb.append("var locData = [\n");
+                sb.append(createHeatMap(res.locationList, 100));
+                sb.append("];\n\n");
+                sb.append("var mapOptions = {zoom: 13, center: new google.maps.LatLng(37.774546, -122.433523)};\n");
+                sb.append("map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);\n");
+                sb.append("var markerBounds = new google.maps.LatLngBounds();\n");
+                sb.append(addMarkerBounds(res.locationList, 100));
+                sb.append("map.fitBounds(markerBounds);\n");
+                sb.append("var pointArray = new google.maps.MVCArray(locData);\n");
+                sb.append("heatmap = new google.maps.visualization.HeatmapLayer({data: pointArray});\n");
+                sb.append("heatmap.setMap(map);\n");
+                sb.append("heatmap.set('radius', 20);\n");
+                sb.append("};\n</script>\n");
+                sb.append("<p><a href=\"#\">Back to Top</a></p>\n");
+            }
+        } else { // The user is coming from the search click button, so there's no "content" parameter
+            sb.append("<br><div id=\"authortable\"></div><table id=\"authortbl\" class=\"tablesorter\"><thead><tr><th>Author</th><th>Total SJR</th><th>Mean SJR</th><th>Total ImpF</th><th>Mean ImpF</th><th>Total h5index</th><th>Mean h5index</th><th>Total EigenF*1000</th><th>Mean EigenF*1000</th><th>Papers h-index</th><th>HRat</th><th>HSJR</th><th>HIF</th><th>HCit</th><th>HCit2</th><th>g-index</th><th>e-index</th><th>m-index</th><th>Total pubs</th></tr></thead><tbody>\n");
+            sb.append(addTable(res.authorList, 100));
+            sb.append("</tbody></table>\n<br>\n<br>\n");
+            sb.append("<p><a href=\"#\">Back to Top</a></p>\n");
+        }
+        
+        
         return sb.toString();
     }
 
