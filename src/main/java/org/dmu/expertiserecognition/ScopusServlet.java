@@ -60,7 +60,14 @@ public class ScopusServlet extends HttpServlet
         response.getWriter().println("<script src=\"/static/spin.min.js\"></script>");
         response.getWriter().println("<script src=\"/static/myspinner.js\"></script>");
         response.getWriter().println("<div id=\"static\">\n" + "<div id=\"header\">\n" +
-                "<img src=\"/static/logo.png\" height = \"50px\" width=\"50px\" align=\"left\">\n" + 
+                "You are currently logged in as "+ request.getUserPrincipal().getName()+
+                "<div id=\"wrapper\">" +
+                "<ul>"
+                + "<li><a href=\"/\">Home</a>-"
+                + "<a href=\"/logout\">Logout</a>-"
+                + "<a href=\"/changepasswd\">Change Password</a>"
+                + "</li>"
+                + "</ul>"+"</div>" +
 "    </div></div> <br>\n");
         response.getWriter().println("<div id=\"loading\">\n" +
 "    <div id=\"loadingcontent\">\n" +
@@ -70,10 +77,10 @@ public class ScopusServlet extends HttpServlet
 "    </div>\n" +
 "</div><br>");
         //response.getWriter().println("<a href=\"http://www.dmu.ac.uk/research/research-faculties-and-institutes/technology/cci/centre-of-computational-intelligence.aspx\" target=\"_blank\"><img src=\"/static/dmulogo.png\" /></a>");
-        response.getWriter().println("<h1>Expertise Recognition</h1>");
+        response.getWriter().println("</br><h1>Expertise Recognition</h1>");
         response.getWriter().println("<h2>Scopus</h2>");
-        response.getWriter().println("<h3>You are currently logged in as "+ request.getUserPrincipal().getName() +"</h3>");
-        response.getWriter().println("<h3><a href=\"/\">Home</a> - <a href=\"/logout\">Logout</a> - <a href=\"/changepasswd\">Change Password</a></h3>");
+        //response.getWriter().println("<h3>You are currently logged in as "+ request.getUserPrincipal().getName() +"</h3>");
+        //response.getWriter().println("<h3><a href=\"/\">Home</a> - <a href=\"/logout\">Logout</a> - <a href=\"/changepasswd\">Change Password</a></h3>");
         response.getWriter().println("<form action=\"/\" method=\"GET\" id=\"theForm\">");
         if (request.getParameter("search") == null)
         {
