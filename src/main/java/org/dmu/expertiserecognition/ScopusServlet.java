@@ -235,8 +235,7 @@ public class ScopusServlet extends HttpServlet
         return !jobj.isJsonNull();
     }
     
-    // TODO: Can be changed to allow only each table to be loaded once.
-    // Need to verify this with the other team members.
+    // Display one table at a time on the browser. Default table is the authors one.
     private String displayResults(ScopusResults res, String search, String years, String content) throws Exception {
         StringBuilder sb = new StringBuilder();
         sb.append("<script src=\"/static/jquery.tablesorter.min.js\"></script>\n");
