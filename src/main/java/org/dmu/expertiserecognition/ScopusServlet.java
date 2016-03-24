@@ -88,7 +88,7 @@ public class ScopusServlet extends HttpServlet
         }
         else
         {
-            response.getWriter().print("<input name=\"search\" size=50 type=\"text\" value=\"" + 
+            response.getWriter().print("</br><input name=\"search\" size=50 type=\"text\" value=\"" + 
             request.getParameter("search") + "\">" + (printYears(request.getParameter("years"))));
         }
       //  response.getWriter().println(printYears(request.getParameter("years")));
@@ -259,7 +259,7 @@ public class ScopusServlet extends HttpServlet
 //        sb.append("<a href=\"#map\">Map of locations</a></p>\n");
 
         // Links to show tables, with the content to be shown
-        sb.append("</p><p><a href=\"?search="); 
+        sb.append("</p><br><p><a href=\"?search="); 
         sb.append(search);
         sb.append("&years=");
         sb.append(years);
@@ -305,8 +305,10 @@ public class ScopusServlet extends HttpServlet
         
         if (content != null) { // The user has clicked in one of the "content" links
             if (content.equals("authortable")) {
-                sb.append("<br><div id=\"authortable\"></div><table id=\"authortbl\" class=\"tablesorter\"><thead><tr><th>Author</th><th>Total SJR</th><th>Mean SJR</th><th>Total ImpF</th><th>Mean ImpF</th><th>Total h5index</th><th>Mean h5index</th><th>Total EigenF*1000</th><th>Mean EigenF*1000</th><th>Papers h-index</th><th>HRat</th><th>HSJR</th><th>HIF</th><th>HCit</th><th>HCit2</th><th>g-index</th><th>e-index</th><th>m-index</th><th>Total pubs</th></tr></thead><tbody>\n");
-                sb.append(addTable(res.authorList, 100));
+                //sb.append("<br><div id=\"authortable\"></div><table id=\"authortbl\" class=\"tablesorter\"><thead><tr><th>Author</th><th>Total SJR</th><th>Mean SJR</th><th>Total ImpF</th><th>Mean ImpF</th><th>Total h5index</th><th>Mean h5index</th><th>Total EigenF*1000</th><th>Mean EigenF*1000</th><th>Papers h-index</th><th>HRat</th><th>HSJR</th><th>HIF</th><th>HCit</th><th>HCit2</th><th>g-index</th><th>e-index</th><th>m-index</th><th>Total pubs</th></tr></thead><tbody>\n");
+                //sb.append(addTable(res.authorList, 100));
+                sb.append("<br><div id=\"table\">Author table</div>");
+                sb.append(addTable2(res.authorList, 100, null));
                 sb.append("</tbody></table>\n<br>\n<br>\n");
                 sb.append("<p><a href=\"#\">Back to Top</a></p>\n");
             }
@@ -373,7 +375,35 @@ public class ScopusServlet extends HttpServlet
         return addTable(list1, range, null);
     }
     
-    private String addTable(ArrayList<RankEntry> list1, int range, Geocode gci) {
+    private String addTable2(ArrayList<RankEntry> list1, int range, Geocode gci) {
+        Iterator<RankEntry> iter = list1.iterator();
+        int i = 1;
+        RankEntry re;
+        StringBuilder sb = new StringBuilder();
+        sb.append("<html>");
+            sb.append("<table>");
+            sb.append("<tr>");
+            sb.append("<th> Name</th>");
+            sb.append("<th> h-index</th>");  
+            sb.append("</tr>");
+         while((iter.hasNext()) && (i <= range)) {
+            re = iter.next();
+            sb.append("<tr>");
+            sb.append("<td>");
+            sb.append(re.name);
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append(re.accH5Index);
+            sb.append("</td>");
+            sb.append("</tr>");
+        
+         }
+         sb.append("</table>");
+         sb.append("</html>");
+        return sb.toString();
+    }
+    
+   private String addTable(ArrayList<RankEntry> list1, int range, Geocode gci) {
         Iterator<RankEntry> iter = list1.iterator();
         int i = 1;
         RankEntry re;
