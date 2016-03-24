@@ -59,16 +59,15 @@ public class ScopusServlet extends HttpServlet
         response.getWriter().println("<script src=\"//code.jquery.com/jquery-2.1.3.min.js\"></script>");
         response.getWriter().println("<script src=\"/static/spin.min.js\"></script>");
         response.getWriter().println("<script src=\"/static/myspinner.js\"></script>");
-        response.getWriter().println("<div id=\"static\">\n" + "<div id=\"header\">\n" +
-                "You are currently logged in as "+ request.getUserPrincipal().getName()+
-                "<div id=\"wrapper\">" +
-                "<ul>"
-                + "<li><a href=\"/\">Home</a>-"
-                + "<a href=\"/logout\">Logout</a>-"
-                + "<a href=\"/changepasswd\">Change Password</a>"
-                + "</li>"
-                + "</ul>"+"</div>" +
-"    </div></div> <br>\n");
+        response.getWriter().println("<div id=\"static\">\n" + "<div id=\"header\">\n"+
+             // "You are currently logged in as "+ request.getUserPrincipal().getName()
+                "<p> You are currently logged in as "+ request.getUserPrincipal().getName() + "</p>" +
+                 "<ul>"
+                + "<li><a href=\"/Home\">Home</a></li>"
+                + "<li><a href=\"/logout\">Logout</a></li>"
+                + "<li><a href=\"/changepasswd\">Change Password</a></li>"
+                + "</ul>" + "</div>"+
+"    </div> <\br>\n");
         response.getWriter().println("<div id=\"loading\">\n" +
 "    <div id=\"loadingcontent\">\n" +
 "        <p id=\"loadingspinner\">\n" +
@@ -77,23 +76,24 @@ public class ScopusServlet extends HttpServlet
 "    </div>\n" +
 "</div><br>");
         //response.getWriter().println("<a href=\"http://www.dmu.ac.uk/research/research-faculties-and-institutes/technology/cci/centre-of-computational-intelligence.aspx\" target=\"_blank\"><img src=\"/static/dmulogo.png\" /></a>");
-        response.getWriter().println("</br><h1>Expertise Recognition</h1>");
-        response.getWriter().println("<h2>Scopus</h2>");
-        //response.getWriter().println("<h3>You are currently logged in as "+ request.getUserPrincipal().getName() +"</h3>");
-        //response.getWriter().println("<h3><a href=\"/\">Home</a> - <a href=\"/logout\">Logout</a> - <a href=\"/changepasswd\">Change Password</a></h3>");
+        response.getWriter().println("</br><h1>Welcome to Expertise Recognition : The home of knowledge</h1>");
+        response.getWriter().println("<h2>Scopus</h2> </br>");
         response.getWriter().println("<form action=\"/\" method=\"GET\" id=\"theForm\">");
         if (request.getParameter("search") == null)
         {
-            response.getWriter().print("<br>Search: <input name=\"search\" size=50 type=\"text\" value=\"v2x congestion europe\">");
+            //response.getWriter().print("<br>Search: <input name=\"search\" size=50 type=\"text\" value=\"v2x congestion europe\">");
+            response.getWriter().println("<br><input name=\"search\" size=50 type=\"text\" value=\"\">" + 
+           (printYears(request.getParameter("years"))));
+             
         }
         else
         {
-            response.getWriter().print("<br>Search: <input name=\"search\" size=50 type=\"text\" value=\"" + 
-            request.getParameter("search") + "\">");
+            response.getWriter().print("</br><input name=\"search\" size=50 type=\"text\" value=\"" + 
+            request.getParameter("search") + "\">" + (printYears(request.getParameter("years"))));
         }
-        response.getWriter().println(" - <a href=\"http://api.elsevier.com/documentation/search/SCOPUSSearchTips.htm\" target=\"_blank\">search tips</a>");
-        response.getWriter().println(printYears(request.getParameter("years")));
-        response.getWriter().println("<br>\n<br><input type=\"submit\" onclick=\"submitFct();\" value=\"Search\"></form>");
+      //  response.getWriter().println(printYears(request.getParameter("years")));
+        response.getWriter().println("<input type=\"submit\" onclick=\"submitFct();\" value=\"Search\"></br>");
+        response.getWriter().println("<a href=\"http://api.elsevier.com/documentation/search/SCOPUSSearchTips.htm\" target=\"_blank\" align=\"center\">search tips</a></form>");
         //response.getWriter().println("<br>\n<br><input type=\"submit\" value=\"Search\"></form>");
 
         if ((request.getParameter("search") == null)||(request.getParameter("search").length() == 0)||
@@ -193,19 +193,19 @@ public class ScopusServlet extends HttpServlet
         }
         switch (yearsint) {
             case 3:
-                res = "<br>Number of Years: <select name=\"years\"><option selected value=\"3\">3</option><option value=\"5\">5</option><option value=\"7\">7</option><option value=\"10\">10</option></select>";
+                res = "Years: <select name=\"years\"><option selected value=\"3\">3</option><option value=\"5\">5</option><option value=\"7\">7</option><option value=\"10\">10</option></select>";
                 break;
             case 5:
-                res = "<br>Number of Years: <select name=\"years\"><option value=\"3\">3</option><option selected value=\"5\">5</option><option value=\"7\">7</option><option value=\"10\">10</option></select>";
+                res = "Years: <select name=\"years\"><option value=\"3\">3</option><option selected value=\"5\">5</option><option value=\"7\">7</option><option value=\"10\">10</option></select>";
                 break;
             case 7:
-                res = "<br>Number of Years: <select name=\"years\"><option value=\"3\">3</option><option value=\"5\">5</option><option selected value=\"7\">7</option><option value=\"10\">10</option></select>";
+                res = "Years: <select name=\"years\"><option value=\"3\">3</option><option value=\"5\">5</option><option selected value=\"7\">7</option><option value=\"10\">10</option></select>";
                 break;
             case 10:
-                res = "<br>Number of Years: <select name=\"years\"><option value=\"3\">3</option><option value=\"5\">5</option><option value=\"7\">7</option><option selected value=\"10\">10</option></select>";
+                res = "Years: <select name=\"years\"><option value=\"3\">3</option><option value=\"5\">5</option><option value=\"7\">7</option><option selected value=\"10\">10</option></select>";
                 break;
             default:
-                res = "<br>Number of Years: <select name=\"years\"><option selected value=\"3\">3</option><option value=\"5\">5</option><option value=\"7\">7</option><option value=\"10\">10</option></select>";
+                res = "Years: <select name=\"years\"><option selected value=\"3\">3</option><option value=\"5\">5</option><option value=\"7\">7</option><option value=\"10\">10</option></select>";
                 break;
         }
         return res;
@@ -259,7 +259,7 @@ public class ScopusServlet extends HttpServlet
 //        sb.append("<a href=\"#map\">Map of locations</a></p>\n");
 
         // Links to show tables, with the content to be shown
-        sb.append("</p><p><a href=\"?search="); 
+        sb.append("</p><br><p><a href=\"?search="); 
         sb.append(search);
         sb.append("&years=");
         sb.append(years);
@@ -305,8 +305,10 @@ public class ScopusServlet extends HttpServlet
         
         if (content != null) { // The user has clicked in one of the "content" links
             if (content.equals("authortable")) {
-                sb.append("<br><div id=\"authortable\"></div><table id=\"authortbl\" class=\"tablesorter\"><thead><tr><th>Author</th><th>Total SJR</th><th>Mean SJR</th><th>Total ImpF</th><th>Mean ImpF</th><th>Total h5index</th><th>Mean h5index</th><th>Total EigenF*1000</th><th>Mean EigenF*1000</th><th>Papers h-index</th><th>HRat</th><th>HSJR</th><th>HIF</th><th>HCit</th><th>HCit2</th><th>g-index</th><th>e-index</th><th>m-index</th><th>Total pubs</th></tr></thead><tbody>\n");
-                sb.append(addTable(res.authorList, 100));
+                //sb.append("<br><div id=\"authortable\"></div><table id=\"authortbl\" class=\"tablesorter\"><thead><tr><th>Author</th><th>Total SJR</th><th>Mean SJR</th><th>Total ImpF</th><th>Mean ImpF</th><th>Total h5index</th><th>Mean h5index</th><th>Total EigenF*1000</th><th>Mean EigenF*1000</th><th>Papers h-index</th><th>HRat</th><th>HSJR</th><th>HIF</th><th>HCit</th><th>HCit2</th><th>g-index</th><th>e-index</th><th>m-index</th><th>Total pubs</th></tr></thead><tbody>\n");
+                //sb.append(addTable(res.authorList, 100));
+                sb.append("<br><div id=\"table\">Author table</div>");
+                sb.append(addTable2(res.authorList, 100, null));
                 sb.append("</tbody></table>\n<br>\n<br>\n");
                 sb.append("<p><a href=\"#\">Back to Top</a></p>\n");
             }
@@ -373,7 +375,35 @@ public class ScopusServlet extends HttpServlet
         return addTable(list1, range, null);
     }
     
-    private String addTable(ArrayList<RankEntry> list1, int range, Geocode gci) {
+    private String addTable2(ArrayList<RankEntry> list1, int range, Geocode gci) {
+        Iterator<RankEntry> iter = list1.iterator();
+        int i = 1;
+        RankEntry re;
+        StringBuilder sb = new StringBuilder();
+        sb.append("<html>");
+            sb.append("<table>");
+            sb.append("<tr>");
+            sb.append("<th> Name</th>");
+            sb.append("<th> h-index</th>");  
+            sb.append("</tr>");
+         while((iter.hasNext()) && (i <= range)) {
+            re = iter.next();
+            sb.append("<tr>");
+            sb.append("<td>");
+            sb.append(re.name);
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append(re.accH5Index);
+            sb.append("</td>");
+            sb.append("</tr>");
+        
+         }
+         sb.append("</table>");
+         sb.append("</html>");
+        return sb.toString();
+    }
+    
+   private String addTable(ArrayList<RankEntry> list1, int range, Geocode gci) {
         Iterator<RankEntry> iter = list1.iterator();
         int i = 1;
         RankEntry re;
