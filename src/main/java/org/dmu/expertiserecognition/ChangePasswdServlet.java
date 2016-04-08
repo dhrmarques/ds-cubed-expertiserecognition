@@ -27,14 +27,21 @@ public class ChangePasswdServlet extends HttpServlet {
         response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
         response.setDateHeader("Expires", 0); // Proxies.
         response.setStatus(HttpServletResponse.SC_OK);
-        response.getWriter().println("<!DOCTYPE html>\n<html>\n<head>");
-        response.getWriter().println("</head>");
+        response.getWriter().println("<!DOCTYPE html>\n<html>\n"+"<head>\n <link rel=\"stylesheet\" type=\"text/css\" href=\"static/expertisecss.css\"> \n </head>");
+        //response.getWriter().println("</head>");
         response.getWriter().println("<body>");
         //response.getWriter().println("<a href=\"http://www.dmu.ac.uk/research/research-faculties-and-institutes/technology/cci/centre-of-computational-intelligence.aspx\" target=\"_blank\"><img src=\"/static/dmulogo.png\" /></a>");
-        response.getWriter().println("<h1>Expertise Recognition</h1>");
-        response.getWriter().println("<h2>Change Password</h2>");
-        response.getWriter().println("<h3>You are currently logged in as "+ request.getUserPrincipal().getName() +"</h3>");
-        response.getWriter().println("<h3><a href=\"/\">Home</a> - <a href=\"/logout\">Logout</a></h3>");
+        response.getWriter().println("<div id=\"static\">\n" + "<div id=\"header\">\n"+
+                "<ul>"
+                + "<li><a href=\"/Home\">Home</a></li>"
+                + "<li><a href=\"/logout\">Logout</a></li>"
+                + "</ul>" + "</div>"+ 
+"    </div> </br>\n");
+        //response.getWriter().println("<h1>Expertise Recognition</h1>")
+        response.getWriter().println("<br><h4> You are currently logged in as "+ request.getUserPrincipal().getName() + "</h4>");
+        response.getWriter().println("<div class=\"login-box\">" + "<div class=\"lb-header\">");
+        response.getWriter().println("<h1>Change Password</h1>\n </br> </br>");
+        //response.getWriter().println("<h3><a href=\"/\">Home</a> - <a href=\"/logout\">Logout</a></h3>");
         if (request.getParameter("oldpass") != null) {
             String oldpass = request.getParameter("oldpass");
             String newpass1 = request.getParameter("newpass1");
@@ -48,11 +55,15 @@ public class ChangePasswdServlet extends HttpServlet {
                 response.getWriter().println("<h3>Password successfully changed!</h3>");
             }
         }
-        response.getWriter().println("<form action=\"/changepasswd\" method=\"POST\" id=\"chgPasswdForm\">");
-        response.getWriter().println("Old password: <input type='password' name='oldpass'/><BR>\n<BR>\n"
-              + "New Password: <input type='password' name='newpass1'/><BR>\n<BR>\n"
-              + "New Password (again): <input type='password' name='newpass2'/><BR>\n<BR>\n"
-              + "<input type='submit' value='Change Password'/></form><BR>\n<BR>\n");
+        response.getWriter().println("<form class=\"email-login\" action=\"/changepasswd\" method=\"POST\" id=\"chgPasswdForm\">");
+        response.getWriter().println("<div class=\"u-form-group\">"
+              +"Old password: <input type='password' name='oldpass'/><BR>\n<BR>\n </div>"
+              +"<div class=\"u-form-group\">"
+              + "New Password: <input type='password' name='newpass1'/><BR>\n<BR>\n </div>"
+              +"<div class=\"u-form-group\">"
+              + "Re-type Password: <input type='password' name='newpass2'/><BR>\n<BR>\n </div>"
+              +"<div class=\"u-form-group\">" 
+              + "<input type='submit' value='Change Password'/></div></form><BR>\n<BR>\n");
         response.getWriter().println("</body></html>");
     }
     
