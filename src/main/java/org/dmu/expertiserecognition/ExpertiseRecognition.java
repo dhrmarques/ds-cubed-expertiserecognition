@@ -42,11 +42,18 @@ public class ExpertiseRecognition {
             response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
             response.setDateHeader("Expires", 0); // Proxies.
             response.getWriter().append("<!DOCTYPE html>\n<HTML><form method='POST' action='/j_security_check'>"
-                    +"<head>\n <link rel=\"stylesheet\" type=\"text/css\" href=\"static/expertisecss.css\"> \n </head>"
-              + "<h1>Authentication Required</h1>\n"
-              + "Username: <input type='text' name='j_username'/><BR>\n<BR>\n"
-              + "Password: <input type='password' name='j_password'/><BR>\n<BR>\n"
-              + "<input type='submit' value='Login'/></form></HTML>");
+                    +"<head>\n <link rel=\"stylesheet\" type=\"text/css\" href=\"static/expertisecss.css\"> \n </head>\n </br>"
+              +"<div class=\"login-box\">" + "<div class=\"lb-header\">"
+              + "<h1>Login to Expertise Recognition</h1>\n </br> </br>"
+              + "<form class=\"email-login\">"+ "<div class=\"u-form-group\">"
+              +"Username: <input type='text' name='j_username'/><BR>\n<BR>\n"+"</div>"
+              +"<div class=\"u-form-group\">"
+              + "Password: <input type='password' name='j_password'/><BR>\n<BR>\n" + "</div>"
+              +"\n </br>"
+              + "<div class=\"buttonHolder\">"
+              +"<div class=\"u-form-group\">" 
+              + "<input type='submit' value='Login'/>" +"</div>" + "</div>"      
+                    + "</form></HTML>");
             }
         };
     }
@@ -158,6 +165,7 @@ public class ExpertiseRecognition {
         context.addServlet(new ServletHolder(logoutServlet()), "/logout");
         context.addServlet(new ServletHolder(new ChangePasswdServlet()), "/changepasswd");
         context.addServlet(new ServletHolder(new UsersMgmtServlet()), "/usersmgmt");
+        context.addServlet(new ServletHolder(new WOKServlet()), "/wok");
         context.setSecurityHandler(prepareAuthenticator());
         
         ContextHandlerCollection contexts = new ContextHandlerCollection();

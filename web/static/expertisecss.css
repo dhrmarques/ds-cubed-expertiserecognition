@@ -12,7 +12,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     width:100%;
     text-align: center;
-    background-color: appworkspace;
+    background-color: white;
     margin :0;
     
 }
@@ -30,17 +30,25 @@ body {
 
 #header {
     height: 50px;
-    background: black;
+    background: green;
     width : 100%;
-    text-align: right;
-    font-size:14px;
-    color: white;
+    text-align: left;
+    font-size:16px;
+    color: white;  
+    position: fixed;
 }
 
-#footer {
-    height: 60px;
-    clear: left;
-    background: #aaa;
+h4  {
+    color: blue;
+    text-align: right;
+    font-size: 0.75rem;
+    padding-right: 5px;
+}
+
+p {
+    color: black;
+    display: inline;
+    font-size: 14px;   
 }
 
 #loading
@@ -75,26 +83,132 @@ body {
     padding-top:80px;
 }
 
-#ul {
+ul {
+  
     list-style-type: none;
     margin: 0;
     padding: 0;
+    height: 50px;
     overflow: hidden;
-    background-color: #333;
 }
 
-#li {
-    float: right;
+li {
+    float:right;
 }
 
-#li a {
+li a {
     display: block;
     color: white;
     text-align: right;
     padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px
+}
+
+h1 {
+    display: block;
+    font-size: 18px;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    font-weight: bold;
     
 }
 
-#li a:hover {
-    background-color: #111;
+h2 {
+    display: block;
+    font-size: 16px;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    font-weight: bold;
+    
+}
+
+th {
+    background-color: green;
+    color: white;
+    font-size: 14px;   
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+hr {
+    display: block;
+    height: 3px;
+    border: 0;
+    border-top: 1px solid #555;
+    margin: 1em 0;
+    padding: 0;
+    text-align: center;
+}
+
+.email-login,.email-signup{
+  position:relative;
+  float: left;
+  width: 100%;
+  height:auto;
+  margin-top: 20px;
+  text-align:center;
+}
+
+.u-form-group input[type="text"],
+.u-form-group input[type="Password"]{
+  width: calc(50% - 22px);
+  height:45px;
+  outline: none;
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  border-radius: 2px;
+  color: #333;
+  font-size:0.8rem;
+  -webkit-transition:all 0.1s linear;
+  -moz-transition:all 0.1s linear;
+  transition:all 0.1s linear;
+}
+
+.u-form-group input[type="submit"]{
+  width:50%;
+  background-color: #1CB94E;
+  border:none;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 14px 0;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.forgot-password{
+  width:50%;
+  text-align: left;
+  text-decoration: underline;
+  color: #888;
+  font-size: 0.75rem;
+}
+
+.buttonHolder{ text-align: center; }
+
+.login-box{
+  position:relative;
+  margin: 10px auto;
+  width: 500px;
+  height: 380px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
+-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
+box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
+}
+.lb-header{
+  position:relative;
+  color: #00415d;
+  margin: 5px 5px 10px 5px;
+  padding-bottom:10px;
+  border-bottom: 1px solid #eee;
+  text-align:center;
+  height:28px;
 }

@@ -105,7 +105,7 @@ public class ResultsDB {
         StringBuilder sb = new StringBuilder();
         sb.append("<script src=\"/static/jquery.tablesorter.min.js\"></script>\n");
         sb.append("<script src=\"/static/cachetablesort.js\"></script>\n");
-        sb.append("<table id=\"cachetbl\" class=\"tablesorter\">\n");
+        sb.append("<table id=\"cachetbl\" class=\"center\">\n");
         sb.append("<thead><tr><th>Search Term</th><th>Number of Years</th><th>Status</th><th>Timestamp</th></tr></thead>\n<tbody>\n");
         Iterator<Pair<SearchQuery, ScopusResults>> it = lsq.iterator();
         Pair<SearchQuery, ScopusResults> sq;

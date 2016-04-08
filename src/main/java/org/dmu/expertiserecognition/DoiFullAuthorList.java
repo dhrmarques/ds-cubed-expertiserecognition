@@ -103,7 +103,16 @@ public class DoiFullAuthorList {
         sb.append(jsonobj.get("fullCitation").getAsString());
         sb.append("</a>");
         dr.citation = sb.toString();
-        dr.year = jsonobj.get("year").getAsString();
+        
+        // Adding "year" field verification; it may come as null 
+        // (translated by Gson as a JsonNull field)
+        JsonElement year = jsonobj.get("year");
+        if (year == null || year.isJsonNull()) {
+            dr.year = "N/A";
+        } else {
+            dr.year = year.getAsString();
+        }
+        
         return dr;
     }
     

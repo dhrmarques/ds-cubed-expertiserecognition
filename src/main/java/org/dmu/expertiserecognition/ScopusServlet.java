@@ -59,41 +59,42 @@ public class ScopusServlet extends HttpServlet
         response.getWriter().println("<script src=\"//code.jquery.com/jquery-2.1.3.min.js\"></script>");
         response.getWriter().println("<script src=\"/static/spin.min.js\"></script>");
         response.getWriter().println("<script src=\"/static/myspinner.js\"></script>");
-        response.getWriter().println("<div id=\"static\">\n" + "<div id=\"header\">\n" +
-                "You are currently logged in as "+ request.getUserPrincipal().getName()+
-                "<div id=\"wrapper\">" +
-                "<ul>"
-                + "<li><a href=\"/\">Home</a>-"
-                + "<a href=\"/logout\">Logout</a>-"
-                + "<a href=\"/changepasswd\">Change Password</a>"
-                + "</li>"
-                + "</ul>"+"</div>" +
-"    </div></div> <br>\n");
+        response.getWriter().println("<div id=\"static\">\n" + "<div id=\"header\">\n"+
+             // "You are currently logged in as "+ request.getUserPrincipal().getName()
+                
+                 "<ul>"
+                + "<li><a href=\"/Home\">Home</a></li>"
+                + "<li><a href=\"/logout\">Logout</a></li>"
+                + "<li><a href=\"/changepasswd\">Change Password</a></li>"
+                + "</ul>" + "</div>"+
+"    </div> </br>\n");
+        response.getWriter().println("</br><h4> You are currently logged in as "+ request.getUserPrincipal().getName() + "</h4>");
         response.getWriter().println("<div id=\"loading\">\n" +
 "    <div id=\"loadingcontent\">\n" +
 "        <p id=\"loadingspinner\">\n" +
 "            Loading ...\n" +
 "        </p>\n" +
 "    </div>\n" +
-"</div><br>");
+"</div></br></br>");
         //response.getWriter().println("<a href=\"http://www.dmu.ac.uk/research/research-faculties-and-institutes/technology/cci/centre-of-computational-intelligence.aspx\" target=\"_blank\"><img src=\"/static/dmulogo.png\" /></a>");
-        response.getWriter().println("</br><h1>Expertise Recognition</h1>");
+        response.getWriter().println("\n </br><h1>Welcome to Expertise Recognition : The home of knowledge</h1>");
         response.getWriter().println("<h2>Scopus</h2>");
-        //response.getWriter().println("<h3>You are currently logged in as "+ request.getUserPrincipal().getName() +"</h3>");
-        //response.getWriter().println("<h3><a href=\"/\">Home</a> - <a href=\"/logout\">Logout</a> - <a href=\"/changepasswd\">Change Password</a></h3>");
         response.getWriter().println("<form action=\"/\" method=\"GET\" id=\"theForm\">");
         if (request.getParameter("search") == null)
         {
-            response.getWriter().print("<br>Search: <input name=\"search\" size=50 type=\"text\" value=\"v2x congestion europe\">");
+            //response.getWriter().print("<br>Search: <input name=\"search\" size=50 type=\"text\" value=\"v2x congestion europe\">");
+            response.getWriter().println("<input name=\"search\" size=50 type=\"text\" value=\"\">" + 
+           (printYears(request.getParameter("years"))));
+             
         }
         else
         {
-            response.getWriter().print("<br>Search: <input name=\"search\" size=50 type=\"text\" value=\"" + 
-            request.getParameter("search") + "\">");
+            response.getWriter().print("</br><input name=\"search\" size=50 type=\"text\" value=\"" + 
+            request.getParameter("search") + "\">" + (printYears(request.getParameter("years"))));
         }
-        response.getWriter().println(" - <a href=\"http://api.elsevier.com/documentation/search/SCOPUSSearchTips.htm\" target=\"_blank\">search tips</a>");
-        response.getWriter().println(printYears(request.getParameter("years")));
-        response.getWriter().println("<br>\n<br><input type=\"submit\" onclick=\"submitFct();\" value=\"Search\"></form>");
+      //  response.getWriter().println(printYears(request.getParameter("years")));
+        response.getWriter().println("<input type=\"submit\" onclick=\"submitFct();\" value=\"Search\"></br>");
+        response.getWriter().println("<a href=\"http://api.elsevier.com/documentation/search/SCOPUSSearchTips.htm\" target=\"_blank\" align=\"center\">search tips</a></form>");
         //response.getWriter().println("<br>\n<br><input type=\"submit\" value=\"Search\"></form>");
 
         if ((request.getParameter("search") == null)||(request.getParameter("search").length() == 0)||
@@ -193,19 +194,19 @@ public class ScopusServlet extends HttpServlet
         }
         switch (yearsint) {
             case 3:
-                res = "<br>Number of Years: <select name=\"years\"><option selected value=\"3\">3</option><option value=\"5\">5</option><option value=\"7\">7</option><option value=\"10\">10</option></select>";
+                res = "Years: <select name=\"years\"><option selected value=\"3\">3</option><option value=\"5\">5</option><option value=\"7\">7</option><option value=\"10\">10</option></select>";
                 break;
             case 5:
-                res = "<br>Number of Years: <select name=\"years\"><option value=\"3\">3</option><option selected value=\"5\">5</option><option value=\"7\">7</option><option value=\"10\">10</option></select>";
+                res = "Years: <select name=\"years\"><option value=\"3\">3</option><option selected value=\"5\">5</option><option value=\"7\">7</option><option value=\"10\">10</option></select>";
                 break;
             case 7:
-                res = "<br>Number of Years: <select name=\"years\"><option value=\"3\">3</option><option value=\"5\">5</option><option selected value=\"7\">7</option><option value=\"10\">10</option></select>";
+                res = "Years: <select name=\"years\"><option value=\"3\">3</option><option value=\"5\">5</option><option selected value=\"7\">7</option><option value=\"10\">10</option></select>";
                 break;
             case 10:
-                res = "<br>Number of Years: <select name=\"years\"><option value=\"3\">3</option><option value=\"5\">5</option><option value=\"7\">7</option><option selected value=\"10\">10</option></select>";
+                res = "Years: <select name=\"years\"><option value=\"3\">3</option><option value=\"5\">5</option><option value=\"7\">7</option><option selected value=\"10\">10</option></select>";
                 break;
             default:
-                res = "<br>Number of Years: <select name=\"years\"><option selected value=\"3\">3</option><option value=\"5\">5</option><option value=\"7\">7</option><option value=\"10\">10</option></select>";
+                res = "Years: <select name=\"years\"><option selected value=\"3\">3</option><option value=\"5\">5</option><option value=\"7\">7</option><option value=\"10\">10</option></select>";
                 break;
         }
         return res;
@@ -241,25 +242,20 @@ public class ScopusServlet extends HttpServlet
         sb.append("<script src=\"/static/jquery.tablesorter.min.js\"></script>\n");
         sb.append("<script src=\"/static/mytablesort.js\"></script>\n");
         sb.append("<script type=\"text/javascript\" src=\"https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization\"></script>\n");
-        sb.append("<div class=\"hr\"><hr /></div>\n<h2>Search Results</h2>\n<p>Search term: \"");
+        sb.append("</br>\n<div class=\\\"hr\\\"><hr /></div>");
+        sb.append("<h2>Search Results</h2>\n<p>Search term: ");
         sb.append(res.searchTerm);
-        sb.append("\"\n");
-        sb.append("<br>within the years ");
+        sb.append("</br>");
+        sb.append("\n Years: ");
         sb.append(res.yearsRange);
-        sb.append("\n<br>Total Results returned is ");
+        sb.append("\n<br>Total Results returned: ");
         sb.append(res.totalResults);
-        sb.append("\n<br>The results were obtained at ");
+        sb.append("</br>");
+        sb.append("\n The results were obtained at: ");
         sb.append(res.timestampResults);
-        
-//        sb.append("</p><p><a href=\"#authortable\">Authors Table</a><br>\n");
-//        sb.append("<a href=\"#affiltable\">Affliations Table</a><br>\n");
-//        sb.append("<a href=\"#loctable\">Locations Table</a><br>\n");
-//        sb.append("<a href=\"#countrytable\">Countries Table</a><br>\n");
-//        sb.append("<a href=\"#citationtable\">Citations Table</a><br>\n");
-//        sb.append("<a href=\"#map\">Map of locations</a></p>\n");
 
         // Links to show tables, with the content to be shown
-        sb.append("</p><p><a href=\"?search="); 
+        sb.append("<br></p><p><a href=\"?search="); 
         sb.append(search);
         sb.append("&years=");
         sb.append(years);
@@ -305,9 +301,11 @@ public class ScopusServlet extends HttpServlet
         
         if (content != null) { // The user has clicked in one of the "content" links
             if (content.equals("authortable")) {
-                sb.append("<br><div id=\"authortable\"></div><table id=\"authortbl\" class=\"tablesorter\"><thead><tr><th>Author</th><th>Total SJR</th><th>Mean SJR</th><th>Total ImpF</th><th>Mean ImpF</th><th>Total h5index</th><th>Mean h5index</th><th>Total EigenF*1000</th><th>Mean EigenF*1000</th><th>Papers h-index</th><th>HRat</th><th>HSJR</th><th>HIF</th><th>HCit</th><th>HCit2</th><th>g-index</th><th>e-index</th><th>m-index</th><th>Total pubs</th></tr></thead><tbody>\n");
-                sb.append(addTable(res.authorList, 100));
-                sb.append("</tbody></table>\n<br>\n<br>\n");
+                //sb.append("<br><div id=\"authortable\"></div><table id=\"authortbl\" class=\"tablesorter\"><thead><tr><th>Author</th><th>Total SJR</th><th>Mean SJR</th><th>Total ImpF</th><th>Mean ImpF</th><th>Total h5index</th><th>Mean h5index</th><th>Total EigenF*1000</th><th>Mean EigenF*1000</th><th>Papers h-index</th><th>HRat</th><th>HSJR</th><th>HIF</th><th>HCit</th><th>HCit2</th><th>g-index</th><th>e-index</th><th>m-index</th><th>Total pubs</th></tr></thead><tbody>\n");
+                //sb.append(addTable(res.authorList, 100));
+               //sb.append("<br><div id=\"table\">Author table</div>");
+                sb.append(addTable2(res.authorList,100));
+                //sb.append("</tbody></table>\n<br>\n<br>\n");
                 sb.append("<p><a href=\"#\">Back to Top</a></p>\n");
             }
 
@@ -339,7 +337,7 @@ public class ScopusServlet extends HttpServlet
             }
 
             if (content.equals("heatmap")) {
-                sb.append("<div id=\"map\" style=\"width: 80%; height: 80%; position: absolute;\"><div id=\"map-canvas\" style=\"width: 80%; height: 80%; position: absolute;\"></div></div>\n<br>\n<br>\n");
+                sb.append("<div id=\"map\" style=\"width: 80%; height: 80%; left: 17.5%; position: absolute;\"><div id=\"map-canvas\" style=\"width: 80%; height: 80%; position: absolute;\"></div></div>\n<br>\n<br>\n");
                 sb.append("<script>\n");
                 sb.append("window.onload = function() {\n");
                 sb.append("var map, pointarray, heatmap;\n\n");
@@ -363,8 +361,7 @@ public class ScopusServlet extends HttpServlet
             sb.append(addTable(res.authorList, 100));
             sb.append("</tbody></table>\n<br>\n<br>\n");
             sb.append("<p><a href=\"#\">Back to Top</a></p>\n");
-        }
-        
+        }   
         
         return sb.toString();
     }
@@ -435,6 +432,105 @@ public class ScopusServlet extends HttpServlet
             sb.append(re.numOfEntries);
             sb.append("</td></tr>\n");
         }
+        return sb.toString();
+    }
+    
+    private String addTable2(ArrayList<RankEntry> list1,int range) {
+        Iterator<RankEntry> iter = list1.iterator();
+        int i = 1;
+        RankEntry re;
+        StringBuilder sb = new StringBuilder();
+        
+            sb.append("<html>");
+            sb.append("<table class=\"center\">");
+            sb.append("<tr>");
+            sb.append("<th> Author Name</th>");
+            sb.append("<th> Total SJR </th>");
+            sb.append("<th> Mean SJR</th>");
+            sb.append("<th> Total ImpF</th>");
+            sb.append("<th> Mean ImpF</th>");
+            sb.append("<th> Total h5index</th>");
+            sb.append("<th> Mean h5index</th>");
+            sb.append("<th> Total EigenF*1000</th>");
+            sb.append("<th> Mean EigenF*1000</th>");
+            sb.append("<th> Papers h-index</th>");
+            sb.append("<th> HRat</th>");
+            sb.append("<th> HSJR</th>");
+            sb.append("<th> HIF</th>");
+            sb.append("<th> HCit</th>");
+            sb.append("<th> HCit2</th>");
+            sb.append("<th> g-index</th>");
+            sb.append("<th> e-index</th>");
+            sb.append("<th> m-index</th>");
+            sb.append("<th> Total pubs</th>");
+           
+            sb.append("</tr>");
+          while((iter.hasNext()) && (i <= range)) {
+            re = iter.next();
+            sb.append("<tr>");
+            sb.append("<td>");
+            sb.append(re.name);
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append((new BigDecimal(re.accSjr)).setScale(3, RoundingMode.HALF_UP).toString());
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append((new BigDecimal(re.meanSjr)).setScale(3, RoundingMode.HALF_UP).toString());
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append((new BigDecimal(re.accImpactFactor)).setScale(3, RoundingMode.HALF_UP).toString());
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append((new BigDecimal(re.meanImpactFactor)).setScale(3, RoundingMode.HALF_UP).toString());
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append(re.accH5Index);
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append((new BigDecimal(re.meanH5Index)).setScale(3, RoundingMode.HALF_UP).toString());
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append((new BigDecimal(re.accEigenFactor)).setScale(3, RoundingMode.HALF_UP).toString());
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append((new BigDecimal(re.meanEigenFactor)).setScale(3, RoundingMode.HALF_UP).toString());
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append(re.papersHindex);
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append((new BigDecimal(re.hrat)).setScale(6, RoundingMode.HALF_UP).toString());
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append((new BigDecimal(re.hsjr)).setScale(6, RoundingMode.HALF_UP).toString());;
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append((new BigDecimal(re.hif)).setScale(6, RoundingMode.HALF_UP).toString());
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append((new BigDecimal(re.hcit)).setScale(6, RoundingMode.HALF_UP).toString());;
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append((new BigDecimal(re.hcit2)).setScale(6, RoundingMode.HALF_UP).toString());;
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append(re.papersGindex);
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append((new BigDecimal(re.papersEindex)).setScale(3, RoundingMode.HALF_UP).toString());
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append(re.papersMindex);
+            sb.append("</td>");
+            sb.append("<td>");
+            sb.append(re.numOfEntries);
+            sb.append("</td>");
+            sb.append("</tr>");
+            
+        
+         }
+         sb.append("</table>");
+         sb.append("</html>");
         return sb.toString();
     }
     
